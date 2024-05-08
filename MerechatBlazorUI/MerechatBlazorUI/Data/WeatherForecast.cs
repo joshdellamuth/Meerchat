@@ -1,4 +1,4 @@
-namespace MerechatBlazorUI.Data
+namespace MeerchatBlazorUI.Data
 {
     public class WeatherForecast
     {
