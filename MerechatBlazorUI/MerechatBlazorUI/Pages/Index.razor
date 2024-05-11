@@ -1,9 +1,18 @@
 ﻿@page "/"
+@using MudBlazor;
+@inject IDialogService DialogService
 
 <PageTitle>Homepage | Meerchat</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+@* Can add text-transform:none to make the text lowercase*@
+<MudButton Variant="Variant.Filled" Color="Color.Primary" Style="text-transform:none">
+    Open Simple Dialog
+</MudButton>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<MudRating SelectedValue="2" />
+
+@code {
+
+}

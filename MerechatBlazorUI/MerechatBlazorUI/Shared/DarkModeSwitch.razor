@@ -1,0 +1,27 @@
+﻿@using MudBlazor;
+
+<MudStack Style="align-items:center;" Row="true">
+    <MudIcon Icon="@Icons.Material.Filled.WbSunny" Color="Color.Primary"/>
+    <MudSwitch class="mud-switch-track" @bind-Checked="@_isDarkMode" Color="Color.Primary" T="bool">
+        <Label>
+            <MudIcon Icon="@Icons.Material.Filled.NightsStay" Color="Color.Primary"/>
+        </Label>
+    </MudSwitch>
+</MudStack>
+
+@code {
+    public EventCallback<bool> DarkModeChanged { get; set; }
+
+    public bool _isDarkMode = false;
+
+    private async Task ChangeDarkMode()
+    {
+        _isDarkMode = !_isDarkMode;
+        await DarkModeChanged.InvokeAsync();
+    }
+
+    private void UpdateDarkMode(string state)
+    {
+        
+    }
+}
