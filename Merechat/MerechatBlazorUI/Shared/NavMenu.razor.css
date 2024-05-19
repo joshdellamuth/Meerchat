@@ -14,6 +14,6 @@
     top: -2px;
 }
 
-@media (min-width: 641px) {
-
+@media (max-width: 641px) {
+    
 }
