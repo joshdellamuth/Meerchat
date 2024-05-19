@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.34607.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeerchatBlazorUI", "MerechatBlazorUI\MeerchatBlazorUI.csproj", "{E6E849EF-3514-443D-961B-A1D88A55225F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Core", "Meerchat.Core\Meerchat.Api.Core.csproj", "{0B8599D6-B14B-4CD8-A971-37B1CC4E904A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Core", "Meerchat.Core\Meerchat.Api.Core.csproj", "{0B8599D6-B14B-4CD8-A971-37B1CC4E904A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{ABBE3B88-64DA-4DC2-A1AE-C2B9C53A6874}"
 EndProject
@@ -13,15 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{83642624-5145-4547-9D5A-0B31AEDED72E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Application", "Meerchat.Api.Application\Meerchat.Api.Application.csproj", "{25817D0F-FDC5-4DB7-B6A7-C96482115BFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Application", "Meerchat.Api.Application\Meerchat.Api.Application.csproj", "{25817D0F-FDC5-4DB7-B6A7-C96482115BFD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6FAC4650-3C25-4B3C-8685-F991E3985816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Core.Tests", "Meerchat.Api.Core.Tests\Meerchat.Api.Core.Tests.csproj", "{C1BE5186-9462-480C-AEAA-0470D73B4F4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Core.Tests", "Meerchat.Api.Core.Tests\Meerchat.Api.Core.Tests.csproj", "{C1BE5186-9462-480C-AEAA-0470D73B4F4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Web", "Meerchat.Api.Web\Meerchat.Api.Web.csproj", "{9E42F4C0-939C-4665-915C-D6772E6ECA4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Web", "Meerchat.Api.Web\Meerchat.Api.Web.csproj", "{9E42F4C0-939C-4665-915C-D6772E6ECA4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Infastructure", "Meerchat.Api.Infastructure\Meerchat.Api.Infastructure.csproj", "{6D1C483B-9646-4115-A7B8-B7663A3C3379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Infastructure", "Meerchat.Api.Infastructure\Meerchat.Api.Infastructure.csproj", "{6D1C483B-9646-4115-A7B8-B7663A3C3379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Application.Tests", "Meerchat.Api.Application.Tests\Meerchat.Api.Application.Tests.csproj", "{9C02CCFD-14A5-4BC8-9399-3180095577B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Web.Tests", "Meerchat.Api.Web.Tests\Meerchat.Api.Web.Tests.csproj", "{45DB9665-50E2-442E-AE39-3A0142B25EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{6D1C483B-9646-4115-A7B8-B7663A3C3379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D1C483B-9646-4115-A7B8-B7663A3C3379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D1C483B-9646-4115-A7B8-B7663A3C3379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C02CCFD-14A5-4BC8-9399-3180095577B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C02CCFD-14A5-4BC8-9399-3180095577B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C02CCFD-14A5-4BC8-9399-3180095577B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C02CCFD-14A5-4BC8-9399-3180095577B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45DB9665-50E2-442E-AE39-3A0142B25EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DB9665-50E2-442E-AE39-3A0142B25EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DB9665-50E2-442E-AE39-3A0142B25EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DB9665-50E2-442E-AE39-3A0142B25EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,9 +72,12 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E6E849EF-3514-443D-961B-A1D88A55225F} = {83642624-5145-4547-9D5A-0B31AEDED72E}
 		{0B8599D6-B14B-4CD8-A971-37B1CC4E904A} = {83642624-5145-4547-9D5A-0B31AEDED72E}
+		{25817D0F-FDC5-4DB7-B6A7-C96482115BFD} = {83642624-5145-4547-9D5A-0B31AEDED72E}
 		{C1BE5186-9462-480C-AEAA-0470D73B4F4E} = {6FAC4650-3C25-4B3C-8685-F991E3985816}
 		{9E42F4C0-939C-4665-915C-D6772E6ECA4B} = {83642624-5145-4547-9D5A-0B31AEDED72E}
 		{6D1C483B-9646-4115-A7B8-B7663A3C3379} = {83642624-5145-4547-9D5A-0B31AEDED72E}
+		{9C02CCFD-14A5-4BC8-9399-3180095577B8} = {6FAC4650-3C25-4B3C-8685-F991E3985816}
+		{45DB9665-50E2-442E-AE39-3A0142B25EB1} = {6FAC4650-3C25-4B3C-8685-F991E3985816}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32728A5D-E234-47E7-B755-BBFF4E88950D}
