@@ -1,0 +1,166 @@
+-- *************************************************** --
+-- TABLE CREATION
+-- Create the MeerchatDb database
+CREATE DATABASE MeerchatDb;
+GO
+
+-- Use MeerchatDb database
+USE MeerchatDb;
+GO
+
+-- Create the MeerchatApp schema
+CREATE SCHEMA MeerchatApp;
+GO
+
+-- Create the Users table
+CREATE TABLE MeerchatApp.Users
+(
+    UserId INT IDENTITY(1,1) PRIMARY KEY,
+    FirstName NVARCHAR(70),
+    LastName NVARCHAR(70),
+    Email NVARCHAR(255),
+    Password NVARCHAR(255),
+    ProfilePicturePath NVARCHAR(255),
+    CreatedBy NVARCHAR(70),
+    CreatedDate DATETIME,
+    ModifiedBy NVARCHAR(70),
+    ModifiedDate DATETIME
+);
+GO
+
+-- Create the Chats table
+CREATE TABLE MeerchatApp.Chats
+(
+    ChatId INT IDENTITY(1,1) PRIMARY KEY,
+    ChatGroupId INT,
+    SenderUserId INT,
+    ChatContent NVARCHAR(4000),
+    SentDateTime DATETIME,
+    CreatedBy NVARCHAR(70),
+    CreatedDate DATETIME,
+    ModifiedBy NVARCHAR(70),
+    ModifiedDate DATETIME
+);
+GO
+
+
+
+-- Create the Roles table
+CREATE TABLE MeerchatApp.Roles
+(
+    RoleId INT IDENTITY(1,1) PRIMARY KEY,
+    RoleName NVARCHAR(70),
+    RoleDescription NVARCHAR(200),
+    CreatedBy NVARCHAR(70),
+    CreatedDate DATETIME,
+    ModifiedBy NVARCHAR(70),
+    ModifiedDate DATETIME
+);
+GO
+
+-- Create the User Roles table (links users to role)
+CREATE TABLE MeerchatApp.UserRoles
+(
+    UserRoleId INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT,
+    RoleId INT,
+    CreatedBy NVARCHAR(70),
+    CreatedDate DATETIME,
+    ModifiedBy NVARCHAR(70),
+    ModifiedDate DATETIME,
+	FOREIGN KEY (UserId) REFERENCES MeerchatApp.Users(UserId),
+	FOREIGN KEY (RoleId) REFERENCES MeerchatApp.Roles(RoleId)
+);
+GO
+
+-- Create the Chat Groups table
+CREATE TABLE MeerchatApp.ChatGroups
+(
+    ChatGroupId INT IDENTITY(1,1) PRIMARY KEY,
+    ChatGroupName NVARCHAR(70),
+    ChatGroupDescription NVARCHAR(200),
+    CreatedBy NVARCHAR(70),
+    CreatedDate DATETIME,
+    ModifiedBy NVARCHAR(70),
+    ModifiedDate DATETIME
+);
+GO
+
+-- Create the User Chat Groups table (links user to chat group)
+CREATE TABLE MeerchatApp.UserChatGroups
+(
+    UserChatGroupId INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT,
+    ChatGroupId INT,
+    CreatedBy NVARCHAR(70),
+    CreatedDate DATETIME,
+    ModifiedBy NVARCHAR(70),
+    ModifiedDate DATETIME,
+    FOREIGN KEY (UserId) REFERENCES MeerchatApp.Users(UserId),
+    FOREIGN KEY (ChatGroupId) REFERENCES MeerchatApp.ChatGroups(ChatGroupId)
+);
+GO
+
+
+-- *************************************************** --
+-- ADDING TEST DATA
+-- Insert into Users table
+-- add John Doe
+INSERT INTO MeerchatApp.Users
+(FirstName, LastName, Email, Password, ProfilePicturePath, CreatedBy, CreatedDate)
+VALUES
+('John', 'Doe', 'john.doe@example.com', 'password123', '/path/to/profile/pic', 'Josh_Dellamuth', GETDATE());
+
+-- add Jane Doe
+INSERT INTO MeerchatApp.Users
+(FirstName, LastName, Email, Password, ProfilePicturePath, CreatedBy, CreatedDate)
+VALUES
+('Jane', 'Doe', 'jane.doe@example.com', 'password123', '/path/to/profile/pic', 'Josh_Dellamuth', GETDATE());
+
+-- Insert into Chats table
+INSERT INTO MeerchatApp.Chats
+(ChatGroupId, SenderUserId, ChatContent, SentDateTime, CreatedBy, CreatedDate)
+VALUES
+(1, 1, 'Hello, this is John Doe sending a chat to Jane Doe', GETDATE(), 'Josh_Dellamuth', GETDATE());
+
+INSERT INTO MeerchatApp.Chats
+(ChatGroupId, SenderUserId, ChatContent, SentDateTime, CreatedBy, CreatedDate)
+VALUES
+(1, 2, 'Hi John! This is Jane Doe sending you a chat back!', GETDATE(), 'Josh_Dellamuth', GETDATE());
+
+-- Insert into Roles table
+INSERT INTO MeerchatApp.Roles
+(RoleName, RoleDescription, CreatedBy, CreatedDate)
+VALUES
+('Admin', 'Administrator role with all privileges', 'Josh_Dellamuth', GETDATE());
+
+-- Insert into UserRoles table
+INSERT INTO MeerchatApp.UserRoles
+(UserId, RoleId, CreatedBy, CreatedDate)
+VALUES
+(1, 1, 'Josh_Dellamuth', GETDATE());
+
+INSERT INTO MeerchatApp.UserRoles
+(UserId, RoleId, CreatedBy, CreatedDate)
+VALUES
+(2, 1, 'Josh_Dellamuth', GETDATE());
+
+-- Insert into ChatGroups table
+INSERT INTO MeerchatApp.ChatGroups
+(ChatGroupName, ChatGroupDescription, CreatedBy, CreatedDate)
+VALUES
+('Test Group', 'This is a test group', 'Josh_Dellamuth', GETDATE());
+
+-- Insert into UserChatGroups table
+INSERT INTO MeerchatApp.UserChatGroups
+(UserId, ChatGroupId, CreatedBy, CreatedDate)
+VALUES
+(1, 1, 'Josh_Dellamuth', GETDATE());
+
+INSERT INTO MeerchatApp.UserChatGroups
+(UserId, ChatGroupId, CreatedBy, CreatedDate)
+VALUES
+(2, 1, 'Josh_Dellamuth', GETDATE());
+
+
+
