@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Meerchat.Api.Core.Entities
 {
-    public class Chat
+    public class Chat : BaseEntity
     {
         public int ChatId { get; set; }
         public int ChatGroupId { get; set; }

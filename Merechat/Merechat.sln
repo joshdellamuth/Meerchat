@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Web", "Meercha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Infastructure", "Meerchat.Api.Infastructure\Meerchat.Api.Infastructure.csproj", "{6D1C483B-9646-4115-A7B8-B7663A3C3379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Application.Tests", "Meerchat.Api.Application.Tests\Meerchat.Api.Application.Tests.csproj", "{9C02CCFD-14A5-4BC8-9399-3180095577B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Application.Tests", "Meerchat.Api.Application.Tests\Meerchat.Api.Application.Tests.csproj", "{9C02CCFD-14A5-4BC8-9399-3180095577B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Web.Tests", "Meerchat.Api.Web.Tests\Meerchat.Api.Web.Tests.csproj", "{45DB9665-50E2-442E-AE39-3A0142B25EB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meerchat.Api.Web.Tests", "Meerchat.Api.Web.Tests\Meerchat.Api.Web.Tests.csproj", "{45DB9665-50E2-442E-AE39-3A0142B25EB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerchat.Api.Functions", "Meerchat.Api.Functions\Meerchat.Api.Functions.csproj", "{139F056B-4718-450E-8BAA-3DF683293845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{45DB9665-50E2-442E-AE39-3A0142B25EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45DB9665-50E2-442E-AE39-3A0142B25EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45DB9665-50E2-442E-AE39-3A0142B25EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{139F056B-4718-450E-8BAA-3DF683293845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{139F056B-4718-450E-8BAA-3DF683293845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{139F056B-4718-450E-8BAA-3DF683293845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{139F056B-4718-450E-8BAA-3DF683293845}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{6D1C483B-9646-4115-A7B8-B7663A3C3379} = {83642624-5145-4547-9D5A-0B31AEDED72E}
 		{9C02CCFD-14A5-4BC8-9399-3180095577B8} = {6FAC4650-3C25-4B3C-8685-F991E3985816}
 		{45DB9665-50E2-442E-AE39-3A0142B25EB1} = {6FAC4650-3C25-4B3C-8685-F991E3985816}
+		{139F056B-4718-450E-8BAA-3DF683293845} = {83642624-5145-4547-9D5A-0B31AEDED72E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32728A5D-E234-47E7-B755-BBFF4E88950D}
