@@ -1,0 +1,52 @@
+﻿@using Microsoft.FluentUI.AspNetCore.Components;
+
+@page "/"
+
+<PageTitle>Dashboard | Meerchat</PageTitle>
+
+<h1>Dashboard</h1>
+
+<FluentStack Orientation="Orientation.Horizontal" Wrap="true">
+    <a href="/chat">
+        <FluentCard Width="200px" Height="200px" Style="display:flex; justify-content: center; align-items:center; flex-direction:column">
+            <FluentIcon Value="@(new Icons.Regular.Size48.Chat())" />
+            <h2>Chat</h2>
+        </FluentCard>
+    </a>
+
+    <a href="/profile">
+        <FluentCard Width="200px" Height="200px" Style="display:flex; justify-content: center; align-items:center; flex-direction:column">
+            <FluentIcon Value="@(new Icons.Regular.Size48.Person())" />
+            <h2>Profile</h2>
+        </FluentCard>
+    </a>
+
+    <a href="/testing-sandbox">
+        <FluentCard Width="200px" Height="200px" Style="display:flex; justify-content: center; align-items:center; flex-direction:column">
+            <FluentIcon Value="@(new Icons.Regular.Size32.PaintBrush())" />
+            <h2>Testing Sandbox</h2>
+        </FluentCard>
+    </a>
+
+    <a href="/admin-roles">
+        <FluentCard Width="200px" Height="200px" Style="display:flex; justify-content: center; align-items:center; flex-direction:column">
+            <FluentIcon Value="@(new Icons.Regular.Size48.Briefcase())" />
+            <h2>Roles - Admin View</h2>
+        </FluentCard>
+    </a>
+
+    <a href="/admin-chats">
+        <FluentCard Width="200px" Height="200px" Style="display:flex; justify-content: center; align-items:center; flex-direction:column">
+            <FluentIcon Value="@(new Icons.Regular.Size48.Chat())" />
+            <h2>Chats - Admin View</h2>
+        </FluentCard>
+    </a>
+
+    <a href="/admin-users">
+        <FluentCard Width="200px" Height="200px" Style="display:flex; justify-content: center; align-items:center; flex-direction:column">
+            <FluentIcon Value="@(new Icons.Filled.Size48.PeopleCommunity())" />
+            <h2>Users - Admin View</h2>
+        </FluentCard>
+    </a>
+</FluentStack>
+

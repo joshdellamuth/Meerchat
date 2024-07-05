@@ -9,30 +9,30 @@
     <FluentNavLink Icon="@(new Icons.Regular.Size20.Apps())" Href="/" Match="NavLinkMatch.All">Dashboard</FluentNavLink>
 
     @* Chat link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Chat())" Href="/" Match="NavLinkMatch.All">Chat</FluentNavLink>
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Chat())" Href="/chat" Match="NavLinkMatch.All">Chat</FluentNavLink>
 
     @* Profile link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Person())" Href="/" Match="NavLinkMatch.All">Profile</FluentNavLink>
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Person())" Href="/profile" Match="NavLinkMatch.All">Profile</FluentNavLink>
 
     @* Testing link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.PaintBrush())" Href="/" Match="NavLinkMatch.All">Testing Sandbox</FluentNavLink>
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.PaintBrush())" Href="/testing-sandbox" Match="NavLinkMatch.All">Testing Sandbox</FluentNavLink>
 
     @* Admin Options Group *@
     <FluentNavGroup Title="Admin Options" Icon="@(new Icons.Regular.Size20.PersonAccounts())">
         <ChildContent>
             @* Role Management Group *@
             <FluentNavGroup Title="Role Management" Icon="@(new Icons.Regular.Size20.Briefcase())">
-                <FluentNavLink Icon="@(new Icons.Regular.Size20.BriefcaseSearch())" Href="/" Match="NavLinkMatch.All">See Roles</FluentNavLink>
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.BriefcaseSearch())" Href="/admin-roles" Match="NavLinkMatch.All">See Roles</FluentNavLink>
             </FluentNavGroup>
 
             @* Chats Group *@
             <FluentNavGroup Title="Chats" Icon="@(new Icons.Regular.Size20.Chat())">
-                <FluentNavLink Icon="@(new Icons.Regular.Size20.ChatCursor())" Href="/" Match="NavLinkMatch.All">See Chats</FluentNavLink>
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.ChatCursor())" Href="/admin-chats" Match="NavLinkMatch.All">See Chats</FluentNavLink>
             </FluentNavGroup>
 
             @* Users Group *@
             <FluentNavGroup Title="Users" Icon="@(new Icons.Regular.Size20.PeopleCommunity())">
-                <FluentNavLink Icon="@(new Icons.Regular.Size20.PeopleSearch())" Href="/" Match="NavLinkMatch.All">See Users</FluentNavLink>
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.PeopleSearch())" Href="/admin-users" Match="NavLinkMatch.All">See Users</FluentNavLink>
             </FluentNavGroup>
         </ChildContent>
     </FluentNavGroup>
