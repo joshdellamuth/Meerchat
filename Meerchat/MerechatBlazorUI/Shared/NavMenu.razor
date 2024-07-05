@@ -1,31 +1,29 @@
-﻿@using MudBlazor;
-
-<MudPaper Height="100%" Width="250px" Class="d-inline-flex py-3 collapse" Elevation="0">
+﻿<MudPaper Height="100%" Width="250px" Class="d-inline-flex py-3 collapse" Elevation="0">
     <MudNavMenu Height="100%" Class="mud-width-full p-1">
         <a class="navbar-brand" href="/">
             <img src="/images/Meerchat-Logo-Beside-Words.png" alt="The Meerchat Logo with Text beside it" style="width:100%; height:auto;" />
         </a>
         <MudDivider Class="my-2" />
-        <MudNavLink Href="/dashboard" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
+         <MudNavLink Href="/dashboard" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
         <MudNavLink Href="/chat" Icon="@Icons.Material.Filled.Chat">Chat</MudNavLink>
         <MudNavLink Href="/profile" Icon="@Icons.Material.Filled.AccountCircle">Profile</MudNavLink>
         <MudNavLink Href="/testing-sandbox" Icon="@Icons.Material.Filled.Brush">Testing Sandbox</MudNavLink>
         <MudNavGroup Title="Administrator Options" Icon="@Icons.Material.Filled.AdminPanelSettings">
            
             @* Admin Role Management *@
-            <MudNavGroup Title="Role Management" Icon="@Icons.Material.Filled.Build">
+             <MudNavGroup Title="Role Management" Icon="@Icons.Material.Filled.Build">
                 <MudNavLink Href="/roles-table" Title="Role Management" Icon="@Icons.Material.Filled.TableView">Roles Table</MudNavLink>
                 <MudNavLink Href="/role-assignment" Title="Role Management" Icon="@Icons.Material.Filled.ListAlt">Assign a Role</MudNavLink>
-            </MudNavGroup>
+            </MudNavGroup> 
 
             @* Admin Chats Group *@
-            <MudNavGroup Title="Chats" Icon="@Icons.Material.Filled.Chat">
+             <MudNavGroup Title="Chats" Icon="@Icons.Material.Filled.Chat">
                 <MudNavLink Href="/chats-table" Icon="@Icons.Material.Filled.TableView">Chat Table</MudNavLink>
                 <MudNavLink Href="/chat-analytics" Icon="@Icons.Material.Filled.Analytics">Chat Analytics</MudNavLink>
-            </MudNavGroup>
+             </MudNavGroup>
 
             @* Admin Users Group *@
-            <MudNavGroup Title="Users" Icon="@Icons.Material.Filled.People">
+             <MudNavGroup Title="Users" Icon="@Icons.Material.Filled.People">
                 <MudNavLink Href="/users-table" Icon="@Icons.Material.Filled.People">Users Table</MudNavLink>
             </MudNavGroup>
         </MudNavGroup>

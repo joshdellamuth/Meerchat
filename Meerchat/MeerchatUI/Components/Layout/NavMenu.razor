@@ -1,0 +1,50 @@
+﻿@using Microsoft.FluentUI.AspNetCore.Components;
+
+<FluentNavMenu Width="250" Title="Custom navigation menu">
+    @* Meerchat Logo *@
+    <a class="navbar-brand" href="/">
+        <img src="/images/Meerchat-Logo-Beside-Words.png" alt="The Meerchat Logo with Text beside it" style="width:100%; height:auto;" />
+    </a>
+    @* Dashboard link *@
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Apps())" Href="/" Match="NavLinkMatch.All">Dashboard</FluentNavLink>
+
+    @* Chat link *@
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Chat())" Href="/" Match="NavLinkMatch.All">Chat</FluentNavLink>
+
+    @* Profile link *@
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Person())" Href="/" Match="NavLinkMatch.All">Profile</FluentNavLink>
+
+    @* Testing link *@
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.PaintBrush())" Href="/" Match="NavLinkMatch.All">Testing Sandbox</FluentNavLink>
+
+    @* Admin Options Group *@
+    <FluentNavGroup Title="Admin Options" Icon="@(new Icons.Regular.Size20.PersonAccounts())">
+        <ChildContent>
+            @* Role Management Group *@
+            <FluentNavGroup Title="Role Management" Icon="@(new Icons.Regular.Size20.Briefcase())">
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.BriefcaseSearch())" Href="/" Match="NavLinkMatch.All">See Roles</FluentNavLink>
+            </FluentNavGroup>
+
+            @* Chats Group *@
+            <FluentNavGroup Title="Chats" Icon="@(new Icons.Regular.Size20.Chat())">
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.ChatCursor())" Href="/" Match="NavLinkMatch.All">See Chats</FluentNavLink>
+            </FluentNavGroup>
+
+            @* Users Group *@
+            <FluentNavGroup Title="Users" Icon="@(new Icons.Regular.Size20.PeopleCommunity())">
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.PeopleSearch())" Href="/" Match="NavLinkMatch.All">See Users</FluentNavLink>
+            </FluentNavGroup>
+        </ChildContent>
+    </FluentNavGroup>
+</FluentNavMenu>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

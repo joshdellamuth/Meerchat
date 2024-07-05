@@ -1,5 +1,4 @@
 ﻿@inherits LayoutComponentBase
-@using MeerchatBlazorUI.Shared;
 
 <PageTitle>Meerchat</PageTitle>
 
@@ -9,7 +8,7 @@
     @if (showSidebar == true)
     {
         <div class="sidebar-container">
-            <NavMenu/>
+            <NavMenu />
         </div>
     }
 
@@ -17,7 +16,7 @@
         <div class="top-row">
             @* MENU BUTTON *@
 
-            
+
         </div>
 
         <article class="content px-4">
@@ -34,7 +33,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        
+
     }
 
     // this is the method used to switch the darkmode bool

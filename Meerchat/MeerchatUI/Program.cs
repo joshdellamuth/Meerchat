@@ -1,4 +1,4 @@
-using MeerchatBlazorUI;
+using MeerchatUI.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
