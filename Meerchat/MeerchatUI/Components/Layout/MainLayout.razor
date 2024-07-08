@@ -1,50 +1,51 @@
-﻿@inherits LayoutComponentBase
+﻿@using MeerchatUI.Components.Shared;
 
-<PageTitle>Meerchat</PageTitle>
+@inherits LayoutComponentBase
 
+<FluentLayout>
+    <FluentHeader>
+        @* Meerchat Logo *@
+        <a class="navbar-brand" href="/">
+            @if (CurrentThemeMode == DesignThemeModes.Dark)
+            {
+                <img src="/images/Meerchat-Logo-Beside-Words.png" alt="The Meerchat Logo with Text beside it" style="width:100%; height:40px;" />
+            }
+            else
+            {
+                <img src="/images/Darkmode-Meerchat-Logo-Beside-Words.png" alt="The Dark Mode Meerchat Logo with Text beside it" style="width:100%; height:40px;" />
+            }
+        </a>
+        <FluentSpacer />
+        <DarkModeButton OnThemeChanged="HandleThemeChanged" />
+    </FluentHeader>
+    <FluentStack Class="main" Orientation="Orientation.Horizontal" Width="100%">
+        <NavMenu />
+        <FluentBodyContent Class="body-content">
+            <div class="content">
+                @Body
+            </div>
+        </FluentBodyContent>
+    </FluentStack>
+    <FluentFooter>
+        <a href="https://www.fluentui-blazor.net" target="_blank">Documentation and demos</a>
+        <FluentSpacer />
+        <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor" target="_blank">About Blazor</a>
+    </FluentFooter>
+</FluentLayout>
 
-<div class="page">
-    @* if the show sidebar bool is true, then show the element*@
-    @if (showSidebar == true)
-    {
-        <div class="sidebar-container">
-            <NavMenu />
-        </div>
-    }
-
-    <main>
-        <div class="top-row">
-            @* MENU BUTTON *@
-
-
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
 </div>
 
 @code {
-    // show sidebar bool
-    private bool showSidebar = true;
+    private DesignThemeModes CurrentThemeMode { get; set; }
 
-    public bool _isDarkMode;
-
-    protected override async Task OnInitializedAsync()
+    // Handle theme change from DarkModeButton
+    private void HandleThemeChanged(DesignThemeModes mode)
     {
-
-    }
-
-    // this is the method used to switch the darkmode bool
-    public async Task OnDarkModeSwitchClicked()
-    {
-
-    }
-
-    // this is the bool that shows the sidebar
-    public void ShowSideBar()
-    {
-        showSidebar = !showSidebar;
+        CurrentThemeMode = mode;
+        StateHasChanged(); // Request re-rendering to update logo
     }
 }

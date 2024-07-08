@@ -1,18 +1,17 @@
 ﻿@using Microsoft.FluentUI.AspNetCore.Components;
 
 <FluentNavMenu Width="250" Title="Custom navigation menu">
-    @* Meerchat Logo *@
-    <a class="navbar-brand" href="/">
-        <img src="/images/Meerchat-Logo-Beside-Words.png" alt="The Meerchat Logo with Text beside it" style="width:100%; height:auto;" />
-    </a>
     @* Dashboard link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Apps())" Href="/" Match="NavLinkMatch.All">Dashboard</FluentNavLink>
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Apps())" Href="/" Match="NavLinkMatch.All">Dashboard
+    </FluentNavLink>
 
     @* Chat link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Chat())" Href="/chat" Match="NavLinkMatch.All">Chat</FluentNavLink>
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Chat())" Href="/chat" Match="NavLinkMatch.All">Chat
+    </FluentNavLink>
 
     @* Profile link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Person())" Href="/profile" Match="NavLinkMatch.All">Profile</FluentNavLink>
+    <FluentNavLink Icon="@(new Icons.Regular.Size20.Person())" Href="/profile" Match="NavLinkMatch.All">Profile
+    </FluentNavLink>
 
     @* Testing link *@
     <FluentNavLink Icon="@(new Icons.Regular.Size20.PaintBrush())" Href="/testing-sandbox" Match="NavLinkMatch.All">Testing Sandbox</FluentNavLink>

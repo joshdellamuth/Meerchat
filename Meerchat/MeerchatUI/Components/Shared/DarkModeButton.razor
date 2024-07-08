@@ -1,0 +1,84 @@
+﻿@using Microsoft.FluentUI.AspNetCore.Components
+@using System.Text.Json
+@inject IJSRuntime JSRuntime
+
+<FluentDesignTheme @bind-Mode="@Mode"
+                   CustomColor=@customColor
+                   StorageName="theme" />
+
+@if (Mode == DesignThemeModes.Light)
+{
+    <FluentIcon Value="@(new Icons.Filled.Size24.WeatherMoon())" Color="Color.Custom" CustomColor="#FFFFFF" OnClick="SwitchTheme" />
+}
+else
+{
+    <FluentIcon Value="@(new Icons.Filled.Size24.WeatherSunny())" Color="Color.Custom" CustomColor="#001844" OnClick="SwitchTheme" />
+}
+
+@code {
+    private DesignThemeModes Mode { get; set; }
+
+    [Parameter]
+    public EventCallback<DesignThemeModes> OnThemeChanged { get; set; }
+
+    public const string customColor = "#246FAC";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // get the theme from the local storage in JSON
+            var themeJson = await JSRuntime.InvokeAsync<string?>("localStorage.getItem", "theme");
+            
+            // check if the theme from the JSON is null or empty
+            if (!string.IsNullOrEmpty(themeJson))
+            {
+                // if themeJson is not empty...
+                try
+                {
+                    // try to Deserialize it into JSON
+                    var theme = JsonSerializer.Deserialize<Theme>(themeJson);
+                    
+                    // if there is no mode set for the theme, make a new light theme object, change the mode, and trigger the callback
+                    if (theme.mode == null)
+                    {
+                        // if there is no theme already set in the local storage, make it light mode by default
+                        theme = new Theme { mode = DesignThemeModes.Light.ToString().ToLower(), primaryColor = customColor };
+                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "theme", JsonSerializer.Serialize(theme));
+                        Mode = theme.mode == "dark" ? DesignThemeModes.Dark : DesignThemeModes.Light;
+                        await OnThemeChanged.InvokeAsync(Mode); // Notify parent component
+                    }
+
+                    // if there is already a theme mode set, then trigger the callback 
+                    else
+                    {
+                        Mode = theme.mode == "dark" ? DesignThemeModes.Dark : DesignThemeModes.Light;
+                        await OnThemeChanged.InvokeAsync(Mode); // Notify parent component
+                    }
+                    
+                }
+                catch
+                {
+                    await OnThemeChanged.InvokeAsync(Mode); // Notify parent component
+                }
+
+            }
+
+
+        }
+    }
+
+    private async Task SwitchTheme()
+    {
+        Mode = Mode == DesignThemeModes.Dark ? DesignThemeModes.Light : DesignThemeModes.Dark;
+        var theme = new Theme { mode = Mode.ToString().ToLower(), primaryColor = customColor };
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "theme", JsonSerializer.Serialize(theme));
+        await OnThemeChanged.InvokeAsync(Mode); // Notify parent component
+    }
+
+    public class Theme
+    {
+        public string? mode { get; set; }
+        public string? primaryColor { get; set; }
+    }
+}
