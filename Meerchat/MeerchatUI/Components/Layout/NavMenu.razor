@@ -1,49 +1,53 @@
 ﻿@using Microsoft.FluentUI.AspNetCore.Components;
 
-<FluentNavMenu Width="250" Title="Custom navigation menu">
-    @* Dashboard link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Apps())" Href="/" Match="NavLinkMatch.All">Dashboard
-    </FluentNavLink>
+<div class="navmenu">
+    <input type="checkbox" title="Menu expand/collapse toggle" id="navmenu-toggle" class="navmenu-icon" />
+    <label for="navmenu-toggle" class="navmenu-icon"><FluentIcon Value="@(new Icons.Regular.Size20.Navigation())" Color="Color.Fill" /></label>
+    <nav class="sitenav" aria-labelledby="main-menu">
+        <FluentNavMenu Id="main-menu" Collapsible="true" Width="250" Title="Navigation menu" @bind-Expanded="expanded" CustomToggle="true">
+            <FluentNavLink Href="/" Match="NavLinkMatch.All" Icon="@(new Icons.Regular.Size20.Home())" IconColor="Color.Accent">Home</FluentNavLink>
+            @* Dashboard link *@
+            <FluentNavLink Icon="@(new Icons.Regular.Size20.Apps())" Href="/">
+                Dashboard
+            </FluentNavLink>
 
-    @* Chat link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Chat())" Href="/chat" Match="NavLinkMatch.All">Chat
-    </FluentNavLink>
+            @* Chat link *@
+            <FluentNavLink Icon="@(new Icons.Regular.Size20.Chat())" Href="/chat">
+                Chat
+            </FluentNavLink>
 
-    @* Profile link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.Person())" Href="/profile" Match="NavLinkMatch.All">Profile
-    </FluentNavLink>
+            @* Profile link *@
+            <FluentNavLink Icon="@(new Icons.Regular.Size20.Person())" Href="/profile">
+                Profile
+            </FluentNavLink>
 
-    @* Testing link *@
-    <FluentNavLink Icon="@(new Icons.Regular.Size20.PaintBrush())" Href="/testing-sandbox" Match="NavLinkMatch.All">Testing Sandbox</FluentNavLink>
+            @* Testing link *@
+            <FluentNavLink Icon="@(new Icons.Regular.Size20.PaintBrush())" Href="/testing-sandbox">Testing Sandbox</FluentNavLink>
 
-    @* Admin Options Group *@
-    <FluentNavGroup Title="Admin Options" Icon="@(new Icons.Regular.Size20.PersonAccounts())">
-        <ChildContent>
-            @* Role Management Group *@
-            <FluentNavGroup Title="Role Management" Icon="@(new Icons.Regular.Size20.Briefcase())">
-                <FluentNavLink Icon="@(new Icons.Regular.Size20.BriefcaseSearch())" Href="/admin-roles" Match="NavLinkMatch.All">See Roles</FluentNavLink>
+            @* Admin Options Group *@
+            <FluentNavGroup Title="Admin Options" Icon="@(new Icons.Regular.Size20.PersonAccounts())">
+                <ChildContent>
+                    @* Role Management Group *@
+                    <FluentNavGroup Title="Role Management" Icon="@(new Icons.Regular.Size20.Briefcase())">
+                        <FluentNavLink Icon="@(new Icons.Regular.Size20.BriefcaseSearch())" Href="/admin-roles">See Roles</FluentNavLink>
+                    </FluentNavGroup>
+
+                    @* Chats Group *@
+                    <FluentNavGroup Title="Chats" Icon="@(new Icons.Regular.Size20.Chat())">
+                        <FluentNavLink Icon="@(new Icons.Regular.Size20.ChatCursor())" Href="/admin-chats">See Chats</FluentNavLink>
+                    </FluentNavGroup>
+
+                    @* Users Group *@
+                    <FluentNavGroup Title="Users" Icon="@(new Icons.Regular.Size20.PeopleCommunity())">
+                        <FluentNavLink Icon="@(new Icons.Regular.Size20.PeopleSearch())" Href="/admin-users">See Users</FluentNavLink>
+                    </FluentNavGroup>
+                </ChildContent>
             </FluentNavGroup>
 
-            @* Chats Group *@
-            <FluentNavGroup Title="Chats" Icon="@(new Icons.Regular.Size20.Chat())">
-                <FluentNavLink Icon="@(new Icons.Regular.Size20.ChatCursor())" Href="/admin-chats" Match="NavLinkMatch.All">See Chats</FluentNavLink>
-            </FluentNavGroup>
-
-            @* Users Group *@
-            <FluentNavGroup Title="Users" Icon="@(new Icons.Regular.Size20.PeopleCommunity())">
-                <FluentNavLink Icon="@(new Icons.Regular.Size20.PeopleSearch())" Href="/admin-users" Match="NavLinkMatch.All">See Users</FluentNavLink>
-            </FluentNavGroup>
-        </ChildContent>
-    </FluentNavGroup>
-</FluentNavMenu>
+        </FluentNavMenu>
+    </nav>
+</div>
 
 @code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    private bool expanded = true;
 }
