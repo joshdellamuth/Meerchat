@@ -1,4 +1,5 @@
 using MeerchatUI.Components;
+using Microsoft.FluentUI.AspNetCore.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddSingleton<Microsoft.FluentUI.AspNetCore.Components.GlobalState>();
-
+// Need this line or some components will not load
+builder.Services.AddFluentUIComponents();
 
 var app = builder.Build();
 
