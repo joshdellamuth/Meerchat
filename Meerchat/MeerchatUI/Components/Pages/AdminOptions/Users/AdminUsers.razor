@@ -1,10 +1,16 @@
 ﻿@using Microsoft.FluentUI.AspNetCore.Components;
 
-@page "/admin-chats"
+@page "/admin-users"
 
-<PageTitle>Admin Chats | Meerchat</PageTitle>
+<PageTitle>Admin Users | Meerchat</PageTitle>
 
-<h1>Chats (Admin View)</h1>
+<h1>Users (Admin View)</h1>
+
+<FluentDataGrid Items="@people">
+    <PropertyColumn Property="@(p => p.PersonId)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.Name)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.BirthDate)" Format="yyyy-MM-dd" Sortable="true" />
+</FluentDataGrid>
 
 @code {
     IQueryable<Person> people = new[]

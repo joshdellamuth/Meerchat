@@ -1,5 +1,8 @@
 ﻿@using Microsoft.FluentUI.AspNetCore.Components.Extensions;
 @using Microsoft.FluentUI.AspNetCore.Components.Components;
+@using MeerchatUI.Components.APIEntities;
+
+@inject HttpClient Http
 
 @page "/testing-sandbox"
 
@@ -9,7 +12,7 @@
 
 <FluentCheckbox Label="Apples" />
 
-<FluentSelect Id="state" name="state" ValueChanged="@(e => selectValue = e)" TOption="string" Height="300px">
+@* <FluentSelect Id="state" name="state" ValueChanged="@(e => selectValue = e)" TOption="string" Height="300px">
     <FluentOption Value="AL">Alabama</FluentOption>
     <FluentOption Value="AK">Alaska</FluentOption>
     <FluentOption Value="AZ">Arizona</FluentOption>
@@ -60,8 +63,35 @@
     <FluentOption Value="WI">Wisconsin</FluentOption>
     <FluentOption Value="WV">West Virginia</FluentOption>
     <FluentOption Value="WY">Wyoming</FluentOption>
-</FluentSelect>
+</FluentSelect> *@
+
+@* <FluentCard>
+    <h2>Weather Data Grid</h2>
+    <FluentDataGrid Items="@weathers" TGridItem="Weather">
+        <PropertyColumn Property="@(w => w.date)" Sortable="true"/>
+        <PropertyColumn Property="@(w => w.temperatureC)" Sortable="true" />
+        <PropertyColumn Property="@(w => w.temperatureF)" Sortable="true" />
+        <PropertyColumn Property="@(w => w.summary)" Sortable="true" />
+    </FluentDataGrid>
+</FluentCard> *@
+
+
+
 
 @code {
-    string? selectValue;
+    // string? selectValue;
+
+    // public Weather weather = new Weather();
+
+    // private IQueryable<Weather> weathers = new List<Weather>().AsQueryable();
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     await FetchEmployees();
+    // }
+
+    // private async Task FetchEmployees()
+    // {
+    //     // weathers = await Http.GetFromJsonAsync<IQueryable<Weather>>("api/WeatherForecast");
+    // }
 }

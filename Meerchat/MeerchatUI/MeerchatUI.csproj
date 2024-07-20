@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Meerchat.Api.Web\Meerchat.Api.Web.csproj" />
+  </ItemGroup>
+
 </Project>
